@@ -1,0 +1,10 @@
+parentRefs:
+- kind: Gateway
+  name: internal-http
+hostnames:
+- "grpc.example.com"
+rules:
+- matches:
+  -  method:
+       service: helloworld.Greeter
+       method:  SayHello

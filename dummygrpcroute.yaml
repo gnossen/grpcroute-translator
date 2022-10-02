@@ -1,0 +1,15 @@
+kind: GRPCRoute
+apiVersion: gateway.networking.k8s.io/v1alpha2
+metadata:
+  name: store
+spec:
+ parentRefs:
+ - kind: Gateway
+   name: internal-http
+ hostnames:
+ - "grpc.example.com"
+ rules:
+ - matches:
+   -  method:
+        service: helloworld.Greeter
+        method:  SayHello
